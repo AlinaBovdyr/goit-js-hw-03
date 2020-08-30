@@ -1,20 +1,14 @@
 const findBestEmployee = function (employees) {
-  'use strict';
-  // Write code under this line
+  // 'use strict';
   const keys = Object.keys(employees);
+  let maxValue = 0;
   let bestEmployee = '';
 
-  if (keys.length !== 0) {
-    const values = Object.values(employees);
-    let maxValue = values[0];
-
-    for (const value of values) {
-      if (value > maxValue) {
-        maxValue = value;
-      }
+  for (const key of keys) {
+    if (employees[key] > maxValue) {
+      maxValue = employees[key];
+      bestEmployee = key;
     }
-
-    bestEmployee = keys[values.indexOf(maxValue)];
   }
 
   return bestEmployee;
@@ -46,3 +40,36 @@ const sellers = {
 };
 console.log(findBestEmployee(sellers));
 // 'lux'
+
+/* I */
+// const keys = Object.keys(employees);
+// let bestEmployee = '';
+
+// if (keys.length !== 0) {
+//   const values = Object.values(employees);
+//   let maxValue = values[0];
+
+//   for (const value of values) {
+//     if (value > maxValue) {
+//       maxValue = value;
+//     }
+//   }
+
+//   bestEmployee = keys[values.indexOf(maxValue)];
+// }
+
+// return bestEmployee;
+
+/* II */
+// const keys = Object.keys(employees);
+// const value = [];
+// let bestEmployee = '';
+
+// if (keys.length !== 0) {
+//   for (const key of keys) {
+//     value.push(employees[key]);
+//     bestEmployee = keys[value.indexOf(Math.max(...value))];
+//   }
+// }
+
+// return bestEmployee;

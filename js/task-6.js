@@ -1,11 +1,15 @@
 function calculateTotalPrice(array, prop) {
-  'use strict';
-  // Write code under this line
   let totalPrice = 0;
 
-  for (const object of array) {
-    if (object.name === prop) {
-      totalPrice += object.price * object.quantity;
+  // for (const object of array) {
+  //   if (object.name === prop) {
+  //     totalPrice += object.price * object.quantity;
+  //   }
+  // }
+
+  for (const { name, price, quantity } of array) {
+    if (name === prop) {
+      totalPrice += price * quantity;
     }
   }
 
